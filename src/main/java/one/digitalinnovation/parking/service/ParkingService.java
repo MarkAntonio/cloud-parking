@@ -18,15 +18,6 @@ public class ParkingService {
 	private static Map<String, Parking> parkingMap = new HashMap();
 	private Parking parking;
 
-	static {
-		String id = getUUID();
-//		String id2 = getUUID();
-		Parking parking = new Parking (id, "DMS-4532", "PE", "CHEVROLET CORSA", "BRANCO");
-//		Parking parking2 = new Parking (id2, "KLN-2652", "AL", "FIAT UNO", "AZUL");
-		parkingMap.put(id, parking);
-//		parkingMap.put(id2, parking2);
-	}
-	
 	public List <Parking> findAll(){
 		return parkingMap.values().stream().collect(Collectors.toList());
 	}

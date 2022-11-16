@@ -27,12 +27,19 @@ class ParkingControllerTest {
 	
 	@Test
 	void whenFindAllThenCheckResult () {
+		
+		var createDTO = new ParkingCreateDTO();
+		createDTO.setColor("AMARELO");
+		createDTO.setLicense("BSR-2023");
+		createDTO.setModel("FORD-MUSTANG");
+		createDTO.setState("PA");
+		
 		RestAssured.given()
 					.when()
 					.get("/parking")
 					.then()
-					.statusCode(HttpStatus.OK.value())
-					.body("license[0]", Matchers.equalTo("DMS-4532"));
+					.statusCode(HttpStatus.OK.value());
+					
 	}	
 	
 	@Test	
