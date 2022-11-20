@@ -15,7 +15,7 @@ import io.restassured.RestAssured;
 import one.digitalinnovation.parking.controller.dto.ParkingCreateDTO;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ParkingControllerTest {
+class ParkingControllerTest{
 	
 	@LocalServerPort 
 	private int randomPort;	
@@ -27,12 +27,6 @@ class ParkingControllerTest {
 	
 	@Test
 	void whenFindAllThenCheckResult () {
-		
-		var createDTO = new ParkingCreateDTO();
-		createDTO.setColor("AMARELO");
-		createDTO.setLicense("BSR-2023");
-		createDTO.setModel("FORD-MUSTANG");
-		createDTO.setState("PA");
 		
 		RestAssured.given()
 					.when()

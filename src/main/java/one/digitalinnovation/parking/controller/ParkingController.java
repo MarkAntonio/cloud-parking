@@ -1,4 +1,4 @@
-package one.digitalinnovation.parking.controller;
+  package one.digitalinnovation.parking.controller;
 
 import java.util.List;
 
@@ -72,7 +72,7 @@ public class ParkingController {
 	
 	@PostMapping("/{id}")
 	public ResponseEntity<ParkingDTO> exit(@PathVariable String id) {
-		Parking parking = parkingService.exit(id);
+		Parking parking = parkingService.checkOut(id);
 		return ResponseEntity.ok(parkingMapper.toParkingDTO(parking));	
 	}
 	
